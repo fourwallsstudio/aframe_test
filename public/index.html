@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>aframe test</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src='dist/bundle.js'></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-box color="red" sound="src: url(audio/Acapella (Multitracks pt 1 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="0 0 6"
+                      to="8 4 -16"
+                      dur="8000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="blue" sound="src: url(audio/Bass Stems (Multitracks pt 2 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="4 4 -8"
+                      to="-8 0 8"
+                      dur="10000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="green" sound="src: url(audio/Guitar Stems (Multitracks pt 3 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="-10 0 4"
+                      to="6 -4 -20"
+                      dur="12000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="black" sound="src: url(audio/FX-Backing Vocal Stems (Multitracks pt 4 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="8 4 -10"
+                      to="-8 0 10"
+                      dur="8000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="purple" sound="src: url(audio/Bass Drum Stems (Multitracks pt 5 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="-4 0 10"
+                      to="6 4 -16"
+                      dur="10000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="yellow" sound="src: url(audio/Drum Machine Stems (Multitracks pt 6 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="-6 4 -16"
+                      to="6 0 16"
+                      dur="8000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-box color="orange" sound="src: url(audio/Hi Hat Stems (Multitracks pt 7 of 7).mp3); rolloffFactor: 0.3;">
+         <a-animation attribute="position"
+                      from="-8 0 0"
+                      to="8 4 -10"
+                      dur="12000"
+                      repeat="indefinite"
+                      direction="alternate"></a-animation>
+      </a-box>
+
+      <a-camera position="0 0 18" />
+
+    </a-scene>
+
+    <script>
+      const sounds = document.querySelectorAll('[sound]')
+
+      setTimeout(() => {
+        sounds.forEach( ent => ent.components.sound.playSound());
+      }, 5000)
+    </script>
+  </body>
+</html>
